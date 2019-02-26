@@ -7,4 +7,4 @@
 4. [抽象代数（近世代数）在工程领域有什么具体用处？](https://www.zhihu.com/question/28445705)
 5. [机器学习中的群论方法](https://blog.csdn.net/wishchin/article/details/47393415)
 6. [孤独是学数学的人的常态吗？](https://www.zhihu.com/question/264936493)   
-7.[数学与软件工程那些令人惊讶的相似性——更好的数学基础能帮助产生更多的数学与软件工程学交叉的想法](https://www.oreilly.com.cn/ideas/?p=737)
+7. [数学与软件工程那些令人惊讶的相似性——更好的数学基础能帮助产生更多的数学与软件工程学交叉的想法](https://www.oreilly.com.cn/ideas/?p=737)
