@@ -4,4 +4,4 @@
 *   
 
 Resources:
-1. [为什么我们要考虑线性规划的对偶问题](https://zhuanlan.zhihu.com/p/26658861)
+1. [为什么我们要考虑线性规划的对偶问题](https://www.zhihu.com/question/26658861)
