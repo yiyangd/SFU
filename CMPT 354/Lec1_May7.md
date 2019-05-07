@@ -35,3 +35,21 @@
 * Master skills to design a database
 * Understand how a DBMS works
 
+## Course Overview:
+### Week2. Relational Model
+### Week3-4. Structured Query Language (SQL)
+* Enable you to communicate with a DBMS
+* Declarative language (i.e. say what you want not how to do it)
+### Week5. Relational Algebra
+* SQL: What you want
+* Relational Algebra: How to get it
+### Week6. Storage and Indexing
+* My database application is too slow... Why?
+* One of the queries is very slow... Why?
+### Week8. Query Optimization and Execution
+* Understand how an SQL query is processed
+### Week9-11. Database Design
+* How to design a database for an application (e.g. an iPhone APP)
+### Week12. Transaction Processing
+* What if multiple users access the same data
+### Week13. NoSQL & SQL over Hadoop
