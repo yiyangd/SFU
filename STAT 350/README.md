@@ -23,3 +23,15 @@ Intro
     * Mallow's Cp Statistic
     * [AIC](http://sofasofa.io/forum_main_post.php?postid=1000201)
   
+#### Chapter7: Polynomial Regression Models
+- 7.1 Intro
+- 7.2 Models in One Variable
+  * Important Considerations
+  * 1. order of the model
+  * 2. model-building strategy
+  * 3. extrapolation
+  * 4. ill-Conditioning I 
+  * 7.2.2 [Piecewise Polynomial Fitting (Splines)](https://towardsdatascience.com/non-linear-regression-basis-expansion-polynomials-splines-2d7adb2cc226)
+    * Example 7.2 Vlotage Drop Data
+  * 7.2.3 Polynomial and Trigonometric Terms 
+  
