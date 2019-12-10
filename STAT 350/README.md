@@ -1,10 +1,10 @@
-[Chapter7: Polynomial Regression Models](#7)
+[Chapter04: Model Adequacy Checking](#4)
 
 Week 1. 
 Intro
 - 1.1 Regression and Model Building
 - 1.2 Data Collection
-#### Chapter04: Model Adequacy Checking
+<h4 id="4">Chapter04: Model Adequacy Checking</h4>
 
 - 4.2 Residual Analysis
   * 4.2.2 Methods for Scaling Residuals
