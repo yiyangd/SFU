@@ -8,4 +8,7 @@
   * 1. the model errors have mean zero and constant variance an are uncorrelated
   * 2. the model errors have a Normal distribution(to Conduct hypothesis tests and construct CIs), errors are independent
   
-<h2 id='2>5.2 Variance
+<h2 id='2>5.2 Variance Stabilizing Transformations
+* Constant Variance Assumption
+  * Often violated when the variance is functionally related to the mean
+  * Transformation
