@@ -1,27 +1,10 @@
-[create an anchor](#Chapter10:-Variable-Selection-and-Model-Building)
+[Chapter7: Polynomial Regression Models](#7)
 
 Week 1. 
 Intro
 - 1.1 Regression and Model Building
 - 1.2 Data Collection
 #### Chapter04: Model Adequacy Checking
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - 4.2 Residual Analysis
   * 4.2.2 Methods for Scaling Residuals
@@ -42,8 +25,8 @@ Intro
     * Residual Mean Square
     * Mallow's Cp Statistic
     * [AIC](http://sofasofa.io/forum_main_post.php?postid=1000201)
-  
-#### Chapter7: Polynomial Regression Models
+<h4 id="7">Chapter7: Polynomial Regression Models</h4>
+
 - 7.1 Intro
 - 7.2 Models in One Variable
   * Important Considerations
