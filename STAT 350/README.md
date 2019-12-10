@@ -1,3 +1,5 @@
+[create an anchor](#Chapter10:-Variable-Selection-and-Model-Building)
+
 Week 1. 
 Intro
 - 1.1 Regression and Model Building
