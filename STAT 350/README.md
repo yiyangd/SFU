@@ -4,7 +4,7 @@ Week 1.
 Intro
 - 1.1 Regression and Model Building
 - 1.2 Data Collection
-<h4 id="4">Chapter04: Model Adequacy Checking</h4>
+<h3 id="4">Chapter04: Model Adequacy Checking</h3>
 
 - 4.2 Residual Analysis
   * 4.2.2 Methods for Scaling Residuals
