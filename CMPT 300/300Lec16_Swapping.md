@@ -7,10 +7,12 @@
 ### 1. Swapping （Page 1-8 Section 9.5)
 Process instructions and the data they operate on must 【be in memory】 to be execute 
 - However, a process (or a portion of a process) can be `swapped` temporarily 【out of memory】 to a `backing store`(e.g. Disk) and then brought 【back into memory】for continued execution
-  - Current memory contents written to a backing store
-  - Memory Image for the next user process read in
+  - Current memory contents written to a **backing store**
+  - **Memory Image** for the next user process read in
   - Ready Queue contains processes whose memory images are on disk (and ready to run)
-  
+
+![Swapping](imgs/swapping.jpeg)
+
 The backing store Candidates:
 - fast secondary storage
 - large enough to accommodate whatever parts of processes need to be stored and retrieved
@@ -19,7 +21,7 @@ The backing store Candidates:
 The Swapping Candidates:
 - Idle or mostly idle processes
 - Inactive
-![Swapping](imgs/swapping.jpeg)
+
 #### Advantage of swapping (Page 2)
 Swapping makes it possible for the **total physical address space** of all processes to exceed the **real physical memory** of the system (oversubscribed)
 - ==> increasing the degree of multiprogramming in a system
