@@ -1,13 +1,13 @@
 ## July 9 Lecture 16 Thursday | 31 Pages
 - Section 9.2 - Contiguous Memory Allocation
 - Section 9.3 - Paging
-- Section 9.5 - Swapping
+- Section 9.5 - Swapping Page 2 - 8
 
 
-### 1. Swapping （Page 1-8 Section 9.5)
+### 1. Swapping （Page 2 | Section 9.5)
 Process instructions and the data they operate on must 【be in memory】 to be execute 
 - However, a process (or a portion of a process) can be `swapped` temporarily 【out of memory】 to a `backing store`(e.g. Disk) and then brought 【back into memory】for continued execution
-  - Current memory contents written to a **backing store**
+  - Current memory contents written to a **backing store** (disk)
   - **Memory Image** for the next user process read in
   - Ready Queue contains processes whose memory images are on disk (and ready to run)
 
@@ -22,7 +22,13 @@ The Swapping Candidates:
 - Idle or mostly idle processes
 - Inactive
 
-#### Advantage of swapping (Page 2)
+Context Switch (Section 3.2.3 | Page 3)
+- Switching the CPU core to another process requires performing a state save of the current process and a state restore of a different process.
+- This Task is time-consuming
+  - Dependent Upon the device performance
+  - If we used a scheduling scheme like Round Robin, we would want a VERY large **time quantum**
+
+#### Advantage of swapping (Page 4)
 Swapping makes it possible for the **total physical address space** of all processes to exceed the **real physical memory** of the system (oversubscribed)
 - ==> increasing the degree of multiprogramming in a system
 #### Swapping with Partitions
