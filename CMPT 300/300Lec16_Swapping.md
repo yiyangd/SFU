@@ -10,10 +10,12 @@ Process instructions and the data they operate on must 【be in memory】 to be 
   - Current memory contents written to a backing store
   - Memory Image for the next user process read in
   - Ready Queue contains processes whose memory images are on disk (and ready to run)
+  
 The backing store Candidates:
 - fast secondary storage
 - large enough to accommodate whatever parts of processes need to be stored and retrieved
 - provide direct access to these **memory images**
+
 The Swapping Candidates:
 - Idle or mostly idle processes
 - Inactive
