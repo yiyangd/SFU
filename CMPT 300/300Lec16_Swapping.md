@@ -72,10 +72,16 @@ Each Partition can be scheduled separately
 - A partition cannot be shared
   - when a process is done, another approprivately sized job will take its place
 
-#### 2.1 Memory Allocation (Sec 9.2.2)
--
-We could add swapping done separately for each partition 
+#### 2.1 Memory Allocation (Sec 9.2.2 | Page 10)
+The simplest method is to assign processes to variably sized partitions in memory, where each partition may contain exactly one process
+- Initially, all memory is available for user processes and is considered one **large block** of available memory, `a hole`
+- Eventially, memory contains a set of holes of various sizes （大大小小）
 
+
+
+- We could add swapping done separately for each partition 
+- e.g. When 6k job 
+####
 ### 3. General Dynamic Storage Allocation Problem ( Page 17 - 19)
 ### 4. Compaction (Page 20, Sec 9.2.3
 One solution to the problem of external fragmentation.
