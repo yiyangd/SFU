@@ -73,18 +73,52 @@ Each Partition can be scheduled separately
   - when a process is done, another approprivately sized job will take its place
 
 #### 2.1 Memory Allocation (Sec 9.2.2 | Page 10)
-The simplest method is to assign processes to variably sized partitions in memory, where each partition may contain exactly one process
+The simplest method is to assign processes to variably sized partitions in memory, 
+- where each partition may contain exactly one process.
+
+The OS keeps track of (a table to indicate) which memory is in use and which are available 
 - Initially, all memory is available for user processes and is considered one **large block** of available memory, `a hole`
-- Eventially, memory contains a set of holes of various sizes （大大小小）
-
-
-
+- Eventially, memory contains **a set of holes** of various sizes （大大小小的空余空间）
 - We could add swapping done separately for each partition 
-- e.g. When 6k job 
-####
-### 3. General Dynamic Storage Allocation Problem ( Page 17 - 19)
-### 4. Compaction (Page 20, Sec 9.2.3
+  - e.g. When 6k job begins an I/O burst, we could swap it and put another job in.
+
+(Fixed Number of Tasks)What if a 1.5K process in the 2K spot asks for another 1K of memory?
+- 1. abort the process
+- 2. deny the request
+- 3. swap it out and put it on the queue for the 6K partition
+  
+Region size selection is difficult (**For a Fixed Number of Tasks**)
+
+#### 2.2 Dynamic Storage Allocation Procedure (Page 13 - 19)
+For a variable number of Tasks
+- MVT - "Multiple, contiguous variable partition allocation"
+
+When a process arrives and needs memory,
+- the system searches the set for a **hole** that is large enough for this process
+- If the hole is too big, it is split into two parts
+  - one part is allocated to the arriving process
+  - the other is returned to the set of holes.
+
+When a process terminates,
+- it releases its block of memory, which is then placed back in **the set of holes** 
+- If the new hole is adjacent to other holes, they are merged to form one larger contiguous block.
+
+---
+- Dynamic Storage allocation Problem: how to satisfy a request of `size n` from a list of free holes?
+---
+#### 3 Solutions (Page 18 - 19)
+First Fit
+Best Fit
+Worst Fit
+
+Example 
+
+#### 2.2 Fragmentation (Section 9.2.3 | Page 11 - 12)
+Internal Fragmentation: memory i
+#### Compaction (Page 20 - 22, Sec 9.2.3)
 One solution to the problem of external fragmentation.
 - Goal: Shuffle the memory contents so as to place all free memory together in one **large block**
 
-### 5. Paging (Page 23 - Page 31 | Section 9.3)
+
+
+### 3. Paging (Page 23 - Page 31 | Section 9.3)
