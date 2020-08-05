@@ -1,6 +1,6 @@
 ## July 9 Lecture 16 Thursday | 31 Pages
 - Section 9.2 - Contiguous Memory Allocation
-- Section 9.3 - Paging
+- Section 9.3 - Paging (page 23 - page 31)
 - Section 9.5 - Swapping Page 2 - 8
 
 
@@ -103,22 +103,80 @@ When a process terminates,
 - it releases its block of memory, which is then placed back in **the set of holes** 
 - If the new hole is adjacent to other holes, they are merged to form one larger contiguous block.
 
----
-- Dynamic Storage allocation Problem: how to satisfy a request of `size n` from a list of free holes?
----
-#### 3 Solutions (Page 18 - 19)
-First Fit
-Best Fit
-Worst Fit
 
-Example 
+`Dynamic Storage allocation Problem`: how to satisfy a request of `size n` from a list of free holes?
+- with efficiency of allocation and freeing
+- and minimization of fragmentation
+
+#### 3 Solutions (Page 18 - 19)
+First Fit: Allocate the first hole that is **big enough** to satisfy the request
+- faster
+
+
+Best Fit: Allocate the smallest hole that is big enough
+- must search the entire list unless the list is ordered by size
+- produce the smallest leftover hole to minimize fragmentation
+
+Worst Fit: Allocate the largest hole
+- produce the largest leftover hole, which may be more **useful** than the smaller leftover hole from a best-fit  approach
+- also reduce fragmentation
+
+Example: what if a request is made for `19995 blocks` of storage, and there is a `20000 block` space free?
+- The overhead to keep track of the wasted five bytes **is more than** the hole itself.
+- Break the physical memory into fixed-sized blocks and allocate memory in units based on block size
+  - **allocate all 20000** blocks in this case
+  - the memory allocated to this process may be **slightly larger** than the requested memory ==> the difference is internal fragmentation
+
+Conclusion: There are many algorithms for the general storage allocation problem
+- Many **trade-off** between one of allocation/freeing time and fragmentation for the other
+- Some are close to O(1) both allocation and freeing（at the expence of fragmentation 以碎片为代价）
 
 #### 2.2 Fragmentation (Section 9.2.3 | Page 11 - 12)
-Internal Fragmentation: memory i
+Internal Fragmentation: unused memory internal to a partition that is wasted because of the way we set up the partitions
+- E.g. An X<sub>k</sub> process running in a Y<sub>k</sub> partition 
+  - (Y-X)k is wasted space
+  
+External Fragmentation: enough total memory space to satisfy a request but the available spaces are not contiguous =>
+- storage is fragmented into a large number of small holes 
+![fragmentation](imgs/fragmentation.jpeg)
+
+
 #### Compaction (Page 20 - 22, Sec 9.2.3)
-One solution to the problem of external fragmentation.
-- Goal: Shuffle the memory contents so as to place all free memory together in one **large block**
+External fragmentation problem can be severe, in the worst case:
+- A block of free (or wasted) memory between every two processes
+- Goal: Shuffle the memory contents so as to place all free memory together in one **large block** ==> Compaction
+- big enough to run a program while each of the smaller blocks were not
+
+Compaction is not always possible.
+- NOT be done if relocation is **static** and is done at assembly or load time
+- only if relocation is **dynamic** and is done at **execution time**.
+  - if addresses are relocated dynamically, relocation requires ONLY moving the program and data and then changing the **base register** to reflect the new base address
+
+Swapping / Compaction can be used together
+- when the jobs are swapped back in, they can be placed together to leave the largest hole
 
 
-
+Cost Expensive:
+- Move all processes toward one end of memory, all holes move in the over direction
+- The memory occupied by a process must be contiguous
+  - greatly reduce the cost of dealing with fragmentation 【if the memory didn't need to be contiguous】 ==> Paging!
+  
 ### 3. Paging (Page 23 - Page 31 | Section 9.3)
+Definition: the most common memory-management technique to avoid external fragmentation and associated need for compaction (two problems that plague contiguous memory allocation) 
+- Goal: to permit the **logical address space** of processes to be `noncontiguous`, thus allowing a process to be allocated **physical memory** wherever such memory is available.
+  - any available chunk of memory is usable even if it isn't large enough to hold the entire object 
+  - Paging is implemented through cooperation between the OS and the computer hardware support
+#### 3.1 Basic Method (Page 24)
+The basic method for implementing paging involves 
+- **Breaking** physical memory into **fixed-sized blocks** called `frames` (现实）
+- **Breaking** logical memory into **blocks of the same size** called `pages`（理想）
+
+When a process is to be executed, its **pages** are loaded into any available **frames** from their source (a file system or the backing store)
+- The backing store is divided into fixed-sized blocks that are the same size as the memory frames
+- Wide Ramifications: the logical address space is totally separate from the physical address space, so a process can have a logical 64-bit address space even though the system has **less than** 2<sup>64</sup> bytes of physical memory
+
+Every address generated by the CPU is divided into two parts: a page number
+#### TOGO: lecture 17 - Segmentation, Sharing, Paged Segmentation
+| page number   |     page offset      |  
+|:----------:|:-------------:|
+| p |  d |
