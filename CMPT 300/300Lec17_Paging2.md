@@ -71,6 +71,7 @@ Paging broke up our program into pages of a **fixed size**,
 - e.g. a subroutine, data structure, etc
 -
 
+
 #### 2.1 Fragmentation in Segmentation (Page 8）
 Since segments are of **variable** size, we will have fragmentation:
 Degree of fragmentation depends on the segment size
