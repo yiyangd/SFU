@@ -149,7 +149,7 @@ If the code is reentrant code, only one copy of the standard C library need be k
   - the **read-only nature**(protection) of shared code should not be left to the correctness of the code
   - the OS should enforce this property
 ![](imgs/shareingoflibc.jpeg)
-
+![](imgs/sharing_libc.jpeg)
 One solution to the sharing code problem is:
 - if we want 
 - For highly shared code => we can **reserve** the segmemtm numbers
