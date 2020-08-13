@@ -65,7 +65,22 @@ Increase the cache size => Cache hit = 99%
 
 Paging separates logical(contiguous) memory and physical memory (lec16 done)
   
-### 2. Segmentation (分段：Page 2 - 4 & 8 - 10 | <Modern OS 4th> Section 3.7）
+### 2. Segmentation (分段：Page 2 - 4 & 8 - 10 | <Modern OS 4th> Section 3.7 | Three Easy Pieces Sec 16）
+#### The Crux： How to support a Large Address Space?
+A 32-bit address space (4GB in size); a typical program will only use MegaBytes of memory, but still would demand that the entire address space be resident in memory.
+#### Solution to Solve Crux: Generalized Base/Bounds
+The idea is simple: Instead of having just one base and limit pair in our MMU, why not have a base and bounds pair **per logical segment** of the address space?
+- What **segmentation** allows the OS to do is to place each one of those segments in different parts of physical memory, 
+  - => avoid filling physical memory with unused virtual address space
+  
+#### Segmentation Fault in C
+
+> The term segmentation fault or violation arises from a memory access on a segmented machine to an illegal address. 
+
+If we tried to refer to an illegal address, such as 7KB which is beyond **the end of the heap**
+- the hardware detects that the address is out of bounds, traps into the OS, likely leading to the termination of the offending process
+
+
 Paging broke up our program into pages of a **fixed size**, 
 - another way is to break our program into logical segments
 - e.g. a subroutine, data structure, etc
@@ -77,17 +92,39 @@ Since segments are of **variable** size, we will have fragmentation:
 Degree of fragmentation depends on the segment size
 Compaction reduces the problem
 Segment Tables implementation is the same as page table implementation (i.e. cache/TLB)
+
+#### Tip: If 1000 Solutions exist, No great one Does (Three Easy Pieces Section 16.6)
+So many different algorithms exist to try to minimize external fragmentation, this indicates no best way to solve the problem
+- The only real solution is NEVER allocating memory in **variable-sized** chunks
 #### 2.2 Paged Segmentation (MULTICS) (Page 9 | Section 3.7.2)
+
+
 ### 3. Protection ( Slides page 5 | Section 9.3.3)
+#### valid-invalid bit (QUiZ 5 Mistake)
 ### 4. Shared Page ( slides page 6 - 7)
+![Sharing Data vs Code](shareingData_Code.jpeg)
 Paging allows code(pages) to be shared (lec16_page31)
-- e.g. editor can
-- code must be reentrant (可重入代码）
+- e.g. editor can be loaded by the first user to load it, and **subsequent users** page table will point to the previously loaded code
+- code must be reentrant to be shared(可重入代码）
+  - reentrant code never changes during execution => two or more processes can execute the same code at the same time
+    - each process has its own copy of registers and data storage
+    - The data for two different processes will be different
+    
+If the code is reentrant code, only one copy of the standard C library need be kept in physical memory, and the page table for **each user process** maps onto the same physical copy of `libc` 
+- instead of each process load its own copy of `libc` into its address space. (40 user processes x 2 MB `libc` library = 80 MB of memory)
+- A significant saving -- 2 MB total space required by only one copy of the memory
+- Compilers, Window Systems, database systems can also be shared
+  - the read-only nature of shared code should not be left to the correctness of the code
+  - the OS should enforce this property
+![](shareingoflibc.jpeg)
 
 One solution to the sharing code problem is:
-- if
+- if we want 
 - For highly shared code => we can 
 - For Paging, can we easily reserve page numbers for particular pages?
+  - todo
+
+If code is placed within a separate segment, such a segment could potentially be **shared** across multiple running programs (Three Easy Pieces Sec 16.7)
   
 #### TOGO：300Lec18 - Virtual Memory （ Section 10.1, 10.2 - VM, Demanding Paging）
 
