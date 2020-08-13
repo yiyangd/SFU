@@ -66,26 +66,39 @@ Increase the cache size => Cache hit = 99%
 Paging separates logical(contiguous) memory and physical memory (lec16 done)
   
 ### 2. Segmentation (分段：Page 2 - 4 & 8 - 10 | <Modern OS 4th> Section 3.7 | Three Easy Pieces Sec 16）
-#### The Crux： How to support a Large Address Space?
-A 32-bit address space (4GB in size); a typical program will only use MegaBytes of memory, but still would demand that the entire address space be resident in memory.
+#### The Crux： How to【support a Large Address Space】?
+A 32-bit address space (4GB in size); a typical program will only use MegaBytes of memory, but still would【demand that the entire address space】be resident in memory.
 #### Solution to Solve Crux: Generalized Base/Bounds
 The idea is simple: Instead of having just one base and limit pair in our MMU, why not have a base and bounds pair **per logical segment** of the address space?
-- What **segmentation** allows the OS to do is to place each one of those segments in different parts of physical memory, 
-  - => avoid filling physical memory with unused virtual address space
+- A segment is just a contiguous portion of the address space of a particular length
+  - in our canonical address space, we have three logically-different segments: code, stack, heap
+- logical addresses for paging had a page number and displacement, 
+  - logical addresses for segmentation have a segment number and displacement
+- Segment table contains 
+  - base address of the segment
+  - the length of the segment
   
-#### Segmentation Fault in C
+- **Segmentation** allows the OS to place each one of those segments in different parts of physical memory, 
+  - => avoid filling physical memory with unused virtual address space
 
+Paging broke up our program into pages of a **fixed size**, 
+- another way is to break our program into **variable logical segments**
+- e.g. a subroutine, data structure, etc
+
+Main Memory is no longer broken up into fixed-size chunks
+- Segments are small, so finding free memory blocks will be easier
+
+Logically, a user's program will consist of a number of segments
+- Each segment is contiguous, but the group is not contiguous
+
+**Generation of logical addresses for segmentation must be done by the compiler/linker**
+- Reason: Segments are of variable size, we can't just separate an address into upper and lower "halves"
+
+#### Segmentation Fault in C
 > The term segmentation fault or violation arises from a memory access on a segmented machine to an illegal address. 
 
 If we tried to refer to an illegal address, such as 7KB which is beyond **the end of the heap**
 - the hardware detects that the address is out of bounds, traps into the OS, likely leading to the termination of the offending process
-
-
-Paging broke up our program into pages of a **fixed size**, 
-- another way is to break our program into logical segments
-- e.g. a subroutine, data structure, etc
--
-
 
 #### 2.1 Fragmentation in Segmentation (Page 8）
 Since segments are of **variable** size, we will have fragmentation:
@@ -97,10 +110,12 @@ Segment Tables implementation is the same as page table implementation (i.e. cac
 So many different algorithms exist to try to minimize external fragmentation, this indicates no best way to solve the problem
 - The only real solution is NEVER allocating memory in **variable-sized** chunks
 #### 2.2 Paged Segmentation (MULTICS) (Page 9 | Modern OS - Section 3.7.2)
-
+If the segment sizes are large, external fragmentation becomes a big problem
+- Solution: **combine paging and segmentation**
+  - 
 
 ### 3. Protection ( Slides page 5 | Section 9.3.3)
-With Paging, a page may be **half subroutine and half data structure**, so CANNOT setting it to "read-only" 
+With Paging, a page may be **half subroutine and half data structure**, so CANNOT setting it to "read-only" to protect
 
 Since each **Segment** is a **subroutine, data structure**, we can assign a few protection bits (kept in segment table) per segment
 - indicating whether or not a program can read or write a segment
@@ -119,7 +134,7 @@ E.g. By setting a code segment to read-only, the same code can be shared across 
 TODO:
 
 ### 4. Shared Page ( slides page 6 - 7)
-![Sharing Data vs Code](shareingData_Code.jpeg)
+![Sharing Data vs Code](imgs/sharingData_Code.jpeg)
 Paging allows code(pages) to be shared (lec16_page31)
 - e.g. editor can be loaded by the first user to load it, and **subsequent users** page table will point to the previously loaded code
 - code must be reentrant to be shared(可重入代码）
@@ -137,9 +152,9 @@ If the code is reentrant code, only one copy of the standard C library need be k
 
 One solution to the sharing code problem is:
 - if we want 
-- For highly shared code => we can 
+- For highly shared code => we can **reserve** the segmemtm numbers
 - For Paging, can we easily reserve page numbers for particular pages?
-  - todo
+  - NO! Page numbers are generated dynamically
 
 If code is placed within a separate segment, such a segment could potentially be **shared** across multiple running programs (Three Easy Pieces Sec 16.7)
   
