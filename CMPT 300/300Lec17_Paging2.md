@@ -1,5 +1,5 @@
 ## July 14 | Lecture 17 | 10 pages
-- 9.3.2:
+- 9.3.2: Hardware Support
 - 9.3.3: Protect
 - 9.3.4: Shared Page
 - Modern Operating Systems Section 3.7: Segmentation
@@ -96,11 +96,28 @@ Segment Tables implementation is the same as page table implementation (i.e. cac
 #### Tip: If 1000 Solutions exist, No great one Does (Three Easy Pieces Section 16.6)
 So many different algorithms exist to try to minimize external fragmentation, this indicates no best way to solve the problem
 - The only real solution is NEVER allocating memory in **variable-sized** chunks
-#### 2.2 Paged Segmentation (MULTICS) (Page 9 | Section 3.7.2)
+#### 2.2 Paged Segmentation (MULTICS) (Page 9 | Modern OS - Section 3.7.2)
 
 
 ### 3. Protection ( Slides page 5 | Section 9.3.3)
+With Paging, a page may be **half subroutine and half data structure**, so CANNOT setting it to "read-only" 
+
+Since each **Segment** is a **subroutine, data structure**, we can assign a few protection bits (kept in segment table) per segment
+- indicating whether or not a program can read or write a segment
+- or execute code that lies within the segment
+- With Segmentation, it makes sense to protect these logical sections of the program
+
+E.g. By setting a code segment to read-only, the same code can be shared across multiple processes
+- without worry of harming isolation
+- while each process still thinks that it is accessing its own private memory,
+  - the OS is secretly sharing memory which cannot be modified by the process, 
+  - and thus illusion (virtual) is preserved
+- If a user process tries to write to a read-only segment or execute from a non-execute segment
+  - the hardware should **raise an exception**, (prevention)
+  - and thus let the OS deal with the offending process
 #### valid-invalid bit (QUiZ 5 Mistake)
+TODO:
+
 ### 4. Shared Page ( slides page 6 - 7)
 ![Sharing Data vs Code](shareingData_Code.jpeg)
 Paging allows code(pages) to be shared (lec16_page31)
@@ -114,7 +131,7 @@ If the code is reentrant code, only one copy of the standard C library need be k
 - instead of each process load its own copy of `libc` into its address space. (40 user processes x 2 MB `libc` library = 80 MB of memory)
 - A significant saving -- 2 MB total space required by only one copy of the memory
 - Compilers, Window Systems, database systems can also be shared
-  - the read-only nature of shared code should not be left to the correctness of the code
+  - the **read-only nature**(protection) of shared code should not be left to the correctness of the code
   - the OS should enforce this property
 ![](imgs/shareingoflibc.jpeg)
 
