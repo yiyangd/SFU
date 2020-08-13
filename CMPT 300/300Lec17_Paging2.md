@@ -116,7 +116,7 @@ If the code is reentrant code, only one copy of the standard C library need be k
 - Compilers, Window Systems, database systems can also be shared
   - the read-only nature of shared code should not be left to the correctness of the code
   - the OS should enforce this property
-![](shareingoflibc.jpeg)
+![](imgs/shareingoflibc.jpeg)
 
 One solution to the sharing code problem is:
 - if we want 
