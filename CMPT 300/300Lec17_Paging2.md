@@ -67,9 +67,12 @@ Paging separates logical(contiguous) memory and physical memory (lec16 done)
   
 ### 2. Segmentation (分段：Page 2 - 4 & 8 - 10 | <Modern OS 4th> Section 3.7 | Three Easy Pieces Sec 16）
 #### The Crux： How to【support a Large Address Space】?
-A 32-bit address space (4GB in size); a typical program will only use MegaBytes of memory, but still would【demand that the entire address space】be resident in memory.
+A 32-bit address space (4GB in size); a typical program will only use MegaBytes of memory, but still would【demand that the **entire** address space】be resident in memory. For many problems, having two or more separate virtual address spaces may be much better than having only one.
+- What is needed is a way of reeing the programmer from having to manage the expanding and contracting tables, in the same way that Virtual Memory eliminates the worry of organizing the program into overlays
 #### Solution to Solve Crux: Generalized Base/Bounds
-The idea is simple: Instead of having just one base and limit pair in our MMU, why not have a base and bounds pair **per logical segment** of the address space?
+Provide the machine with many completely independent address spaces, wich are called **segments.**
+- segment lengths may change during execution 
+The idea is simple: Have base and bounds pair **per logical segment** of the address space instead of having just one base and limit pair in our MMU
 - A segment is just a contiguous portion of the address space of a particular length
   - in our canonical address space, we have three logically-different segments: code, stack, heap
 - logical addresses for paging had a page number and displacement, 
@@ -112,7 +115,11 @@ So many different algorithms exist to try to minimize external fragmentation, th
 #### 2.2 Paged Segmentation (MULTICS) (Page 9 | Modern OS - Section 3.7.2)
 If the segment sizes are large, external fragmentation becomes a big problem
 - Solution: **combine paging and segmentation**
-  - 
+  - I.e. Split up each segment into non-contiguous pieces
+
+Advantages:
+- Very Little Fragmentation (just like paging)
+- Protection Boun
 
 ### 3. Protection ( Slides page 5 | Section 9.3.3)
 With Paging, a page may be **half subroutine and half data structure**, so CANNOT setting it to "read-only" to protect
@@ -148,13 +155,15 @@ If the code is reentrant code, only one copy of the standard C library need be k
 - Compilers, Window Systems, database systems can also be shared
   - the **read-only nature**(protection) of shared code should not be left to the correctness of the code
   - the OS should enforce this property
-![](imgs/shareingoflibc.jpeg)
+
 ![](imgs/sharing_libc.jpeg)
+
 One solution to the sharing code problem is:
-- if we want 
+- if we want to share code, then that shared code segment must have the **Same Number** of each program using it
 - For highly shared code => we can **reserve** the segmemtm numbers
 - For Paging, can we easily reserve page numbers for particular pages?
-  - NO! Page numbers are generated dynamically
+  - NO! Page numbers are generated dynamically. Cannot reserve page numbers.
+  - Beyond just dynamic relocation, segmentation can better support sparse address spaces, by avoiding the huge potential waste of memory between logical segments of the address space
 
 If code is placed within a separate segment, such a segment could potentially be **shared** across multiple running programs (Three Easy Pieces Sec 16.7)
   
