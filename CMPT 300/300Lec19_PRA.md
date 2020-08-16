@@ -28,8 +28,6 @@ Over-allocating of memory manifests itself as flows
 - Use the freed frame to hold the page 
   - for which the process faulted
 
-![](imgs/page_replace.jpeg)
-
 ![](imgs/page_replacement.jpeg)
 
 #### Modify the page-fault service routine to inlude page replacement: (Page 2)
@@ -67,8 +65,25 @@ Globally: Choose from ALL pages currently in memory
 #### Two main problems to be sloved
 - Which PRA to use? ==> the one with the lowest page-fault rage ==> effective memory access time
   - important because secondary storage I/O is so expensive that even slight improvements in demand-paging methods yield large gains in system performance
-- 
+- How many frames do we allocate to each process?
+- How to select frames that are to be replaced
+
+#### Evaluation of PRA(Page 4)
+Running an algorithm on a particular **reference string of memory references** 
+- => computing the number of page faults
+
+A reference string is **a sequence of memory address accesses** (read or write) that occur over a time period
+- can be artificially created (random-number generator) or recorded during execution of a system
+  - used to compare PRA's
+
+To determine the number of page faults for a particular reference string and PRA
+- Need to know the number of page frames available
+- Obviously, as the number of frames available Increases, the number of Page Faults Decreases
+  - fewer frames causes the number of page replacements to increase
 
 ### 2. The FIFO PRA (Page 5 - 7)
 The simplest algorithm 
 ### 3. The Optimal Page Replacement Algorithm (Page 8 - 10)
+
+
+TOGO: Lec 20: PRA2, Lec21:Thrashing and others in VM
