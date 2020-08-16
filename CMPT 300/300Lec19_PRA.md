@@ -30,6 +30,8 @@ Over-allocating of memory manifests itself as flows
 
 ![](imgs/page_replace.jpeg)
 
+![](imgs/page_replacement.jpeg)
+
 #### Modify the page-fault service routine to inlude page replacement: (Page 2)
 1. Find the location of the desired page on secondary storage
 2. Find a free frame:
