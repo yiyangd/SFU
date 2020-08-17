@@ -81,9 +81,24 @@ To determine the number of page faults for a particular reference string and PRA
 - Obviously, as the number of frames available Increases, the number of Page Faults Decreases
   - fewer frames causes the number of page replacements to increase
 
-### 2. The FIFO PRA (Page 5 - 7)
-The simplest algorithm 
-### 3. The Optimal Page Replacement Algorithm (Page 8 - 10)
+### 2. The FIFO PRA (Section 10.4.2 | Page 5 - 7)
+The simplest algorithm that associates with each page the time when that page was brought into memory
+- when a page must be replaced, the oldest page(**victim**) still in memory is chosen.
+- it is not necessary to record the time when a page is brought in
 
+We can create a FIFO queue to hold all pages in memory
+- replace the page at the head of the queue
+- when a page is brought into memory
+  - insert it at the tail of the queue
+  
+#### Advantages (Page 6)
+#### Disadvantages (Page 7)
+FIFO is not optimal
+- Relatively Large number of page faults
+- Slows down program execution
+### 3. The Optimal Page Replacement Algorithm (Section 10.4.3 | Page 8 - 10)
+If want to cause the **lowest number of page fault**, which page would replace when a free frame was needed?
+
+#### Three Points (Page 10)
 
 TOGO: Lec 20: PRA2, Lec21:Thrashing and others in VM
