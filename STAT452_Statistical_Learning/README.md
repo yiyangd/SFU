@@ -2,6 +2,7 @@
 
 
 - Book: [Introduction to Statistical Learning in R](http://faculty.marshall.usc.edu/gareth-james/ISL/index.html)
+  - [slides](http://rstudio-pubs-static.s3.amazonaws.com/359626_2b9afb36e956418b92a66f8068fa5d2b.html)
 - [Stanford - 15 hours course](https://www.r-bloggers.com/in-depth-introduction-to-machine-learning-in-15-hours-of-expert-videos/)
 - [Code in Python](https://github.com/gaufung/ISL)
   - [code to SLM](https://github.com/fengdu78/lihang-code)
