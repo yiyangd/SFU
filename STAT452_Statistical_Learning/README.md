@@ -1,4 +1,4 @@
-2020 FALL  
+2020 FALL - Sep 9 to Dec 10
 
 
 - Book: [Introduction to Statistical Learning in R](http://faculty.marshall.usc.edu/gareth-james/ISL/index.html)
