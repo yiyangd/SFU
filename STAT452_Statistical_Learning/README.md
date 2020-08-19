@@ -1,12 +1,6 @@
 2020 FALL - Sep 9 to Dec 10
 
 
-- Book: [Introduction to Statistical Learning in R](http://faculty.marshall.usc.edu/gareth-james/ISL/index.html)
-  - [slides](http://rstudio-pubs-static.s3.amazonaws.com/359626_2b9afb36e956418b92a66f8068fa5d2b.html)
-- [Stanford - 15 hours course](https://www.r-bloggers.com/in-depth-introduction-to-machine-learning-in-15-hours-of-expert-videos/)
-- [Code in Python](https://github.com/gaufung/ISL)
-  - [code to SLM](https://github.com/fengdu78/lihang-code)
-- [solution to ESL](https://esl.hohoweiya.xyz/)
 
 ### Outline
 1. Statistical Learning and Prediction
@@ -18,3 +12,15 @@
 7. Trees and ensembles (chapter 8)
 8. Additional modern prediction methods 
 9. Unsupervised learning: clustering and dimension reduction （chapter 10）
+
+#### Reference
+- Book: [Introduction to Statistical Learning in R](http://faculty.marshall.usc.edu/gareth-james/ISL/index.html)
+  - [slides](http://rstudio-pubs-static.s3.amazonaws.com/359626_2b9afb36e956418b92a66f8068fa5d2b.html)
+- [Stanford - 15 hours course](https://www.r-bloggers.com/in-depth-introduction-to-machine-learning-in-15-hours-of-expert-videos/)
+- [Code in Python](https://github.com/gaufung/ISL)
+  - [code to SLM](https://github.com/fengdu78/lihang-code)
+- [solution to ESL](https://esl.hohoweiya.xyz/)
+  - https://waxworksmath.com/Authors/G_M/Hastie/WriteUp/Weatherwax_Epstein_Hastie_Solution_Manual.pdf
+- [solution to ISL](https://github.com/asadoughi/stat-learning)
+- https://altaf-ali.github.io/ISLR/index.html
+- https://waxworksmath.com/Authors/G_M/James/james.html
