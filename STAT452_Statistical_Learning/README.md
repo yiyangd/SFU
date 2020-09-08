@@ -16,35 +16,35 @@
 ### Weekly Plan
 
 Week1: (Sep 7 Mon - Sep 11 Fri)
-- Intro
+- Intro  
 Week2: (Sep 14 Mon - Sep 18 Fri)
-- Linear Reg.
+- Linear Reg.  
 Week3: (Sep 21 Mon - Sep 25 Fri)
-- Mesuaring Error
+- Mesuaring Error  
 Week4: (Sep 28 Mon - Oct 2 Fri)
-- Mesuaring Error 
+- Mesuaring Error   
 Week5: (Oct 5 Mon - Oct 9 Fri)
-- Variable Selection
+- Variable Selection  
 Week6: (Oct 12 Mon - Oct 16 Fri)
-- Variable Selection 2
+- Variable Selection 2  
 Week7: (Oct 19 Mon - Oct 23 Fri)
-- Nonlinear Reg
+- Nonlinear Reg  
 Week8: (Oct 26 Mon - Oct 30 Fri)
-- Trees, ensembles
+- Trees, ensembles  
 Week6: (Nov 2 Mon - Nov 6 Fri)
-- Classification
+- Classification  
 Week7: (Nov 9 Mon - Nov 13 Fri)
 - Nonparametric Classification
-- Proj 1
+- Proj 1  
 Week8: (Nov 16 Mon - Nov 20 Fri)
-- SVM, ROC
+- SVM, ROC  
 Week9: (Nov 23 Mon - Nov 27 Fri)
-- Unsupervised PCA, Clustering Intro
+- Unsupervised PCA, Clustering Intro  
 Week10: (Nov 30 Mon - Dec 4 Fri)
 - Clustering
-- Proj 2
+- Proj 2  
 Week11: (Dec 7 - Dec 11 Fri)
-- Review
+- Review  
 #### Reference
 - Book: [Introduction to Statistical Learning in R](http://faculty.marshall.usc.edu/gareth-james/ISL/index.html)
   - [slides](http://rstudio-pubs-static.s3.amazonaws.com/359626_2b9afb36e956418b92a66f8068fa5d2b.html)
