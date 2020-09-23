@@ -23,40 +23,44 @@ Week2: (Sep 14 Mon - Sep 18 Fri)
 
 Week3: (Sep 21 Mon - Sep 25 Fri)
 - Mesuaring Error  
-
+- 【统计学习笔记】信用卡的回归模型 （3.3）
+- 【统计学习笔记】信用卡数据集中的共线性（3.3）
 Week4: (Sep 28 Mon - Oct 2 Fri)
 - Mesuaring Error   
-
+- 【统计学习笔记】交叉检验（5.1）
+- 【统计学习笔记】bootstrap自助法（5.2）
 Week5: (Oct 5 Mon - Oct 9 Fri)
 - Variable Selection  
-
+- 【统计学习笔记】信用卡的特征筛选（6.1）
 Week6: (Oct 12 Mon - Oct 16 Fri)
 - Variable Selection 2  
-
+- 【统计学习笔记】Ridge & Lasso在信用卡数据集中的应用（6.2）
+- 【统计学习笔记】PCR on Credit Card (6.3)
 Week7: (Oct 19 Mon - Oct 23 Fri)
 - Nonlinear Reg  
 
 Week8: (Oct 26 Mon - Oct 30 Fri)
 - Trees, ensembles  
 
-Week6: (Nov 2 Mon - Nov 6 Fri)
+Week9: (Nov 2 Mon - Nov 6 Fri)
 - Classification  
-
-Week7: (Nov 9 Mon - Nov 13 Fri)
+- 【统计学习笔记】Logistic Regression在信用卡分类问题上的应用(4.1-4.3)
+- 【统计学习笔记】LDA预测信用卡违约率（4.4）
+Week10: (Nov 9 Mon - Nov 13 Fri)
 - Nonparametric Classification
 - Proj 1  
 
-Week8: (Nov 16 Mon - Nov 20 Fri)
+Week11: (Nov 16 Mon - Nov 20 Fri)
 - SVM, ROC  
 
-Week9: (Nov 23 Mon - Nov 27 Fri)
+Week12: (Nov 23 Mon - Nov 27 Fri)
 - Unsupervised PCA, Clustering Intro  
 
-Week10: (Nov 30 Mon - Dec 4 Fri)
+Week13: (Nov 30 Mon - Dec 4 Fri)
 - Clustering
 - Proj 2  
 
-Week11: (Dec 7 - Dec 11 Fri)
+Week14: (Dec 7 - Dec 11 Fri)
 - Review  
 
 #### Reference
