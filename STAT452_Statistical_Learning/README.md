@@ -4,13 +4,13 @@
 
 ### Outline
 1. Statistical Learning and Prediction
-2. Measuring prediction error 
+2. Measuring prediction error  （chapter 2 & 5）
 3. Linear regression essentials and extensions （chapter 3）
 4. Classification: Predicting categorical data （chapter 4）
 5. Variable selection in linear regression （chapter 6）
 6. Non-linear regression methods (chapter 7)
 7. Trees and ensembles (chapter 8)
-8. Additional modern prediction methods 
+8. Additional modern prediction methods （chapter 9）
 9. Unsupervised learning: clustering and dimension reduction （chapter 10）
 
 ### Weekly Plan
