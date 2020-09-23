@@ -50,6 +50,7 @@ Week9: (Nov 2 Mon - Nov 6 Fri)
 - Classification  
 - 【统计学习笔记】Logistic Regression在信用卡分类问题上的应用(4.1-4.3)
 - 【统计学习笔记】LDA预测信用卡违约率（4.4）
+
 Week10: (Nov 9 Mon - Nov 13 Fri)
 - Nonparametric Classification
 - Proj 1  
