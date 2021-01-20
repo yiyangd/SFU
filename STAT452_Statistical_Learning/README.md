@@ -79,3 +79,4 @@ Week14: (Dec 7 - Dec 11 Fri)
 - [solution to ISL](https://github.com/asadoughi/stat-learning)
 - https://altaf-ali.github.io/ISLR/index.html
 - https://waxworksmath.com/Authors/G_M/James/james.html
+- http://www.loyhome.com/elements_of_statistical_learining_lecture_notes/
