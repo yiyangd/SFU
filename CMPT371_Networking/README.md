@@ -1,4 +1,4 @@
-{{< img src="/images/rdt_abs_impl.jpeg" width="446px" height="200px">}}
+![ha](./images/rdt_abs_impl.jpeg)
 
 
 Reference:
