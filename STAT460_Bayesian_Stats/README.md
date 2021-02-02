@@ -1,14 +1,14 @@
 Study Logs:  
 Course: STAT 460 Bayesian Statistics  
 Term: 2021 Spring  
-Jan 12 - Tues:
+#### Jan 12 - Tues:
 - Intro
 - Likelyhood-based Inference Review
 
-Jan 15 - Fri:
+#### Jan 15 - Fri:
 - Likelyhood-based vs. Bayesian Inference
 - 
-Week 2  
+### Week 2  
 Jan 19 - Tues:
 - Example: Genetics (Lec01-Page48)
 - 
@@ -17,8 +17,12 @@ Jan 19 - Tues:
   - exchangeability
   -
 - Single-Parameter Model 1: 
+### Week3
+#### Jan
+#### Jan
+### Week4
+#### Feb 2 - Tues 10:30 - 12:30
 
-Jan 
 
 
 Reference：
