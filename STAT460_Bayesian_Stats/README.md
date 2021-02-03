@@ -26,3 +26,4 @@ Jan 19 - Tues:
 
 
 Reference：
+https://study.sagepub.com/lambert/student-resources/conjugate-priors/author-videos
