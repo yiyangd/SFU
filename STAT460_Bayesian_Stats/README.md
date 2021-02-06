@@ -23,7 +23,10 @@ Jan 19 - Tues:
 ### Week4
 #### Feb 2 - Tues 10:30 - 12:30
 
+#### Feb 5 - Friday
+Start Chapter 3 - Multiparameter Models (Part 1)
 
+Marginalization and Monte Carlo
 
 Reference：
 https://study.sagepub.com/lambert/student-resources/conjugate-priors/author-videos
